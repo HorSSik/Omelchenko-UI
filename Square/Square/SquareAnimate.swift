@@ -10,31 +10,27 @@ import UIKit
 class SquareAnimate: UILabel {
     
     enum Position {
-        case left
-        case right
-        case rightDown
-        case leftDown
+        case topLeft
+        case topRight
+        case bottomRight
+        case bottomLeft
     }
     
-    var leftPoint = CGPoint(x: 20, y: 44)
-    var rightPoint = CGPoint(x: 300, y: 44)
-    var rightDownPoint = CGPoint(x: 300, y: 750)
-    var leftDownPoint = CGPoint(x: 20, y: 750)
-    
-    var myPosition = Position.left
-    
-    var squarePosition: Position {
-        return self.myPosition
+    public var squarePosition: Position {
+        get { return self.myPosition }
+        set { self.myPosition = newValue }
     }
     
-    func setDesignForButton(
-        sender: UIButton,
-        backgroundColor: UIColor,
-        titleText: String,
-        titleColor: UIColor
-    ) {
-        sender.backgroundColor = backgroundColor
-        sender.setTitle(titleText, for: .normal)
-        sender.setTitleColor(titleColor, for: .normal)
-    }
+    public var topLeftPoint = CGPoint(x: 20, y: 44)
+    public var topRightPoint = CGPoint(x: 300, y: 44)
+    public var bottomRightPoint = CGPoint(x: 300, y: 750)
+    public var bottomLeftPoint = CGPoint(x: 20, y: 750)
+    
+    public var isCancelled = false
+    public var isMoving = false
+    public var isAnimated = true
+    
+    private var myPosition = Position.topLeft
+    
+    public let durationAnimate = 2.0
 }

@@ -29,10 +29,10 @@
                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="click:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="zGD-fV-Gd6"/>
+                        <action selector="click:" destination="-1" eventType="touchUpInside" id="3tc-bm-2Yh"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-yK-eWs" customClass="SquareAnimate" customModule="Square" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-yK-eWs" customClass="SquareAnimate" customModule="Square" customModuleProvider="target">
                     <rect key="frame" x="16" y="44" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.25298629820000001" green="0.56284224989999998" blue="0.14407377460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
