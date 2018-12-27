@@ -18,7 +18,7 @@ class NewViewController: UIViewController {
         return nil
     }
 
-    @IBAction func click(_ sender: UIButton) {
+    @IBAction func onStart(_ sender: UIButton) {
         self.squareView.do { lableView in
             lableView.lable.isCancelled.toggle()
             if lableView.lable.isCancelled && !lableView.lable.isMoving {
