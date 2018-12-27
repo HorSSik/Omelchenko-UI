@@ -21,10 +21,18 @@ class SquareAnimate: UILabel {
         set { self.myPosition = newValue }
     }
     
-    public var topLeftPoint = CGPoint(x: 20, y: 44)
-    public var topRightPoint = CGPoint(x: 300, y: 44)
-    public var bottomRightPoint = CGPoint(x: 300, y: 750)
-    public var bottomLeftPoint = CGPoint(x: 20, y: 750)
+    private let screen = UIScreen.main.bounds
+    private lazy var sizeLable = self.bounds
+    
+    private lazy var topLeftPoint = CGPoint(x: self.screen.minX, y: self.screen.minY)
+    private lazy var topRightPoint = CGPoint(x: self.screen.maxX - self.sizeLable.width, y: self.screen.minY)
+    private lazy var bottomRightPoint = CGPoint(x: self.screen.maxX - self.sizeLable.width, y: self.screen.maxY - self.sizeLable.height)
+    private lazy var bottomLeftPoint = CGPoint(x: self.screen.minX, y: self.screen.maxY - self.sizeLable.height)
+    
+    public lazy var points = [self.topLeftPoint,
+                              self.topRightPoint,
+                              self.bottomRightPoint,
+                              self.bottomLeftPoint]
     
     public var isCancelled = false
     public var isMoving = false

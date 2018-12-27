@@ -17,16 +17,16 @@ class LableView: UIView {
 
         switch self.lable.squarePosition {
         case .topLeft:
-            position = self.lable.topRightPoint
+            position = self.lable.points[0]
             self.lable.squarePosition = .topRight
         case .topRight:
-            position = self.lable.bottomRightPoint
+            position = self.lable.points[1]
             self.lable.squarePosition = .bottomRight
         case .bottomRight:
-            position = self.lable.bottomLeftPoint
+            position = self.lable.points[2]
             self.lable.squarePosition = .bottomLeft
         case .bottomLeft:
-            position = self.lable.topLeftPoint
+            position = self.lable.points[3]
             self.lable.squarePosition = .topLeft
         }
         
