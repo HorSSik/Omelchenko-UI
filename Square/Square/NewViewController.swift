@@ -9,28 +9,34 @@
 import UIKit
 
 class NewViewController: UIViewController {
-
-    @IBOutlet var lableView: LableView!
     
-    @IBAction func click(_ sender: UIButton) {
-        let lableView = self.lableView!
+    public var squareView: LableView? {
+        if self.isViewLoaded {
+            return self.view as? LableView
+        }
         
-        lableView.lable.isCancelled.toggle()
-        if lableView.lable.isCancelled && !lableView.lable.isMoving {
-            lableView.moveSquare(with: lableView.lable.durationAnimate, animated: lableView.lable.isAnimated)
-            lableView.setDesignForButton(
-                sender: sender,
-                backgroundColor: .red,
-                titleText: "STOP",
-                titleColor: .black
-            )
-        } else {
-            lableView.setDesignForButton(
-                sender: sender,
-                backgroundColor: .green,
-                titleText: "START",
-                titleColor: .red
-            )
+        return nil
+    }
+
+    @IBAction func click(_ sender: UIButton) {
+        self.squareView.do { lableView in
+            lableView.lable.isCancelled.toggle()
+            if lableView.lable.isCancelled && !lableView.lable.isMoving {
+                lableView.moveSquare(with: lableView.lable.durationAnimate, animated: lableView.lable.isAnimated)
+                lableView.setDesignForButton(
+                    sender: sender,
+                    backgroundColor: .red,
+                    titleText: "STOP",
+                    titleColor: .black
+                )
+            } else {
+                lableView.setDesignForButton(
+                    sender: sender,
+                    backgroundColor: .green,
+                    titleText: "START",
+                    titleColor: .red
+                )
+            }
         }
     }
     

@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewViewController" customModule="Square" customModuleProvider="target">
             <connections>
-                <outlet property="lableView" destination="i5M-Pr-FkT" id="NYN-nx-ysw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="3ao-14-ud4"/>
             </connections>
         </placeholder>
@@ -44,7 +43,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
-                <outlet property="lable" destination="BFd-yK-eWs" id="QNq-rN-DL1"/>
+                <outlet property="lable" destination="BFd-yK-eWs" id="43P-wI-cZP"/>
             </connections>
             <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>
         </view>
