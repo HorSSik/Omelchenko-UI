@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     )
         -> Bool
     {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = NewViewController()
-        self.window?.makeKeyAndVisible()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = SquareViewController()
+        window.makeKeyAndVisible()
+        self.window = window
         
         return true
     }
