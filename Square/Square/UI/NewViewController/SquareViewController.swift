@@ -8,16 +8,12 @@
 
 import UIKit
 
-class SquareViewController: UIViewController {
+class SquareViewController: UIViewController, RootViewRepresentable {
     
-    public var squareView: SquareView? {
-        return when(self.isViewLoaded) {
-            cast(self.view)
-        }
-    }
-
+    typealias RootView = SquareView
+    
     @IBAction func onStart(_ sender: UIButton) {
-        self.squareView?.onStart(sender)
+        self.rootView?.onStart(sender)
     }
     
     override func viewDidLoad() {

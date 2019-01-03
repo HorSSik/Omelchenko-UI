@@ -6,9 +6,16 @@
 //  Copyright © 2019 IDAP. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 extension CGRect {
+    
+    enum Position {
+        case topLeft
+        case topRight
+        case bottomRight
+        case bottomLeft
+    }
     
     var topLeft: CGPoint {
         return CGPoint(x: self.minX, y: self.minY)
