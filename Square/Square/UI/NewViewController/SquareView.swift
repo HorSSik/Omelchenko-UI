@@ -14,11 +14,11 @@ class SquareView: UIView {
     
     typealias Position = CGRect.Position
     
-    private(set) var isCancelled = false
-    private(set) var isMoving = false
-    private(set) var isAnimated = true
+    private var isCancelled = false
+    private var isMoving = false
+    private var isAnimated = true
 
-    private(set) var squarePosition = Position.topLeft
+    private var squarePosition = Position.topLeft
     private let positions = PositionGenerator<Position>(objects: .topLeft, .topRight, .bottomRight, .bottomLeft)
     
     private let durationAnimate = 2.0
