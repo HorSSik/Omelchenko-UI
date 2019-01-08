@@ -27,14 +27,14 @@ class SquareView: UIView {
         self.isCancelled.toggle()
         if self.isCancelled && !self.isMoving {
             self.moveSquare(with: self.durationAnimate, animated: self.isAnimated)
-            self.setDesignForButton(
+            sender.setDesign(
                 sender: sender,
                 backgroundColor: .flatRed,
                 titleText: "STOP",
                 titleColor: .white
             )
         } else {
-            self.setDesignForButton(
+            sender.setDesign(
                 sender: sender,
                 backgroundColor: .flatGreen,
                 titleText: "START",
@@ -87,16 +87,5 @@ class SquareView: UIView {
                 }
             }
         )
-    }
-    
-    private func setDesignForButton(
-        sender: UIButton,
-        backgroundColor: UIColor,
-        titleText: String,
-        titleColor: UIColor
-    ) {
-        sender.backgroundColor = backgroundColor
-        sender.setTitle(titleText, for: .normal)
-        sender.setTitleColor(titleColor, for: .normal)
     }
 }
