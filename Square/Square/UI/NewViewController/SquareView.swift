@@ -54,7 +54,9 @@ class SquareView: UIView {
                     right: lable.frame.width
                 )
             )
-
+            
+            self.squarePosition = self.positions.next()
+            
             switch self.squarePosition {
             case .topLeft:
                 position = frame.topLeft
@@ -67,7 +69,6 @@ class SquareView: UIView {
             }
             
             self.animateMove(to: position, duration: durationAnimate, animated: animated)
-            self.squarePosition = self.positions.next()
         }
     }
     
