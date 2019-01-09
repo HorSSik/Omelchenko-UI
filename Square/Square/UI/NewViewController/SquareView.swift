@@ -26,60 +26,60 @@ class SquareView: UIView {
     
     typealias Position = CGRect.Position
     
+    private(set) var isAnimating = true
+    
     private var isCancelled = false
     private var isMoving = false
-    private var isAnimating = true
 
     private var squarePosition = Position.topLeft
     private let positions = Generator<Position>(objects: .topLeft, .topRight, .bottomRight, .bottomLeft)
     
-    public func start(_ sender: UIButton) {
+    public func relocation(_ sender: UIButton) {
         self.isCancelled.toggle()
         if self.isCancelled && !self.isMoving {
-            self.moveSquare(animated: self.isAnimating)
+            self.setSquarePosition(animated: self.isAnimating)
             sender.setDesign(
-                sender: sender,
-                backgroundColor: .flatRed,
+                backgroundColor: Color.flatRed.opaque,
                 titleText: Strings.stop,
                 titleColor: .white
             )
         } else {
             sender.setDesign(
-                sender: sender,
-                backgroundColor: .flatGreen,
+                backgroundColor: Color.flatGreen.opaque,
                 titleText: Strings.start,
                 titleColor: .white
             )
         }
     }
     
-    private func moveSquare(animated: Bool) {
-        self.label.do { lable in
-            var position = lable.frame.origin
-            let inset = UIEdgeInsets(
-                top: self.safeAreaInsets.top,
-                left: 0,
-                bottom: lable.frame.height,
-                right: lable.frame.width
-            )
-            let frame = self.frame.inset(by: inset)
-        
-            self.squarePosition = self.positions.next()
-            position = frame.point(from: self.squarePosition)
-            self.animateMove(to: position, animated: animated)
-        }
+    private func setSquarePosition(animated: Bool) {
+        self.squarePosition = self.positions.next()
+        self.animateMove(to: self.squarePosition, animated: animated)
     }
     
-    private func animateMove(to position: CGPoint, animated: Bool) {
+    private func inset(label: UILabel?) -> CGRect {
+        guard let label = label else { return .zero }
+        let inset = UIEdgeInsets(
+            top: self.safeAreaInsets.top,
+            left: 0,
+            bottom: label.frame.height,
+            right: label.frame.width
+        )
+        
+        return self.frame.inset(by: inset)
+    }
+    
+    private func animateMove(to position: Position, animated: Bool) {
         UIView.animate(
             withDuration: animated ? Durations.twoSecond : Durations.zero,
             animations: {
-                self.label?.frame.origin = position
+                let frame = self.inset(label: self.label)
+                self.label?.frame.origin = frame.point(from: position)
                 self.isMoving = true
             },
             completion: {_ in
                 if self.isCancelled {
-                    self.moveSquare(animated: animated)
+                    self.setSquarePosition(animated: animated)
                 } else {
                     self.isMoving = false
                 }

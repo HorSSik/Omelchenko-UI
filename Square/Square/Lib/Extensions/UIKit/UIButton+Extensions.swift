@@ -11,13 +11,12 @@ import UIKit
 extension UIButton {
     
     public func setDesign(
-        sender: UIButton,
         backgroundColor: UIColor,
         titleText: String,
         titleColor: UIColor
     ) {
-        sender.backgroundColor = backgroundColor
-        sender.setTitle(titleText, for: .normal)
-        sender.setTitleColor(titleColor, for: .normal)
+        self.backgroundColor = backgroundColor
+        self.setTitle(titleText, for: .normal)
+        self.setTitleColor(titleColor, for: .normal)
     }
 }

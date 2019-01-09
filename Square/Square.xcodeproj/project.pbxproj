@@ -17,6 +17,8 @@
 		3F3DCDF321D27706001836C5 /* SquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3DCDF121D27706001836C5 /* SquareViewController.xib */; };
 		3F3DCDF621D27717001836C5 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DCDF521D27717001836C5 /* Optional+Extensions.swift */; };
 		3F3DCDF921D27723001836C5 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DCDF721D27723001836C5 /* SquareView.swift */; };
+		3F401F4B21E60F720075F29C /* ColorRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F401F4A21E60F720075F29C /* ColorRepresentable.swift */; };
+		3F401F4E21E60FAE0075F29C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F401F4D21E60FAE0075F29C /* Color.swift */; };
 		3F440ECB21D605A2006EA059 /* F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F440EC421D605A2006EA059 /* F.swift */; };
 		3F440ECD21D605A2006EA059 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F440EC621D605A2006EA059 /* Atomic.swift */; };
 		3F440ECF21D60665006EA059 /* NSLocking+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F440ECE21D60665006EA059 /* NSLocking+Extensions.swift */; };
@@ -69,6 +71,8 @@
 		3F3DCDF121D27706001836C5 /* SquareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquareViewController.xib; sourceTree = "<group>"; };
 		3F3DCDF521D27717001836C5 /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		3F3DCDF721D27723001836C5 /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		3F401F4A21E60F720075F29C /* ColorRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepresentable.swift; sourceTree = "<group>"; };
+		3F401F4D21E60FAE0075F29C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3F440EC421D605A2006EA059 /* F.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F.swift; sourceTree = "<group>"; };
 		3F440EC621D605A2006EA059 /* Atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		3F440ECE21D60665006EA059 /* NSLocking+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLocking+Extensions.swift"; sourceTree = "<group>"; };
@@ -190,6 +194,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3F401F4C21E60FA10075F29C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F401F4D21E60FAE0075F29C /* Color.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3F440EBF21D605A2006EA059 /* Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +257,7 @@
 		3F440EDC21D60936006EA059 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3F401F4C21E60FA10075F29C /* Resources */,
 				3F66280821E4930F00DC0E0C /* Mixin */,
 				3F2FA85721DDF8F200903BD0 /* Protocols */,
 				3F3DCDF421D27717001836C5 /* Extensions */,
@@ -257,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				3F2FA85821DDF91E00903BD0 /* RootViewRepresentable.swift */,
+				3F401F4A21E60F720075F29C /* ColorRepresentable.swift */,
 			);
 			path = Mixin;
 			sourceTree = "<group>";
@@ -403,6 +417,7 @@
 			files = (
 				3F440ECF21D60665006EA059 /* NSLocking+Extensions.swift in Sources */,
 				3F66281521E495A600DC0E0C /* UIButton+Extensions.swift in Sources */,
+				3F401F4E21E60FAE0075F29C /* Color.swift in Sources */,
 				3F2FA85921DDF91E00903BD0 /* RootViewRepresentable.swift in Sources */,
 				3F66280A21E4933300DC0E0C /* Cancellable.swift in Sources */,
 				3F7289CA21DCE302007E5539 /* UIColor+Extensions.swift in Sources */,
@@ -411,6 +426,7 @@
 				3F3DCDC321D276EE001836C5 /* AppDelegate.swift in Sources */,
 				3F440ED621D607A0006EA059 /* DispatchQueue+Extensions.swift in Sources */,
 				3F440EDA21D607CB006EA059 /* Strideable+Extensions.swift in Sources */,
+				3F401F4B21E60F720075F29C /* ColorRepresentable.swift in Sources */,
 				3F440ECD21D605A2006EA059 /* Atomic.swift in Sources */,
 				3F3DCDF921D27723001836C5 /* SquareView.swift in Sources */,
 				3F7289C421DCB088007E5539 /* CGRect+Extensions.swift in Sources */,
