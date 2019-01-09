@@ -8,13 +8,13 @@
 
 import Foundation
 
-final class PositionGenerator<Value> {
+final class Generator<Value> {
     
-    private let objects = Atomic([Value]())
+    private let objects: [Value]
     private let index = Atomic(0)
     
     init(objects: [Value]) {
-        self.objects.value = objects
+        self.objects = objects
     }
     
     convenience init(objects: Value...) {
@@ -22,14 +22,10 @@ final class PositionGenerator<Value> {
     }
     
     func next() -> Value {
-        let index: Int = self.index.modify { index in
-            defer {
-                index = (index + 1) % self.objects.value.count
-            }
+        return self.index.modify { index in
+            index = (index + 1) % self.objects.count
             
-            return index
+            return self.objects[index]
         }
-        
-        return self.objects.value[index]
     }
 }

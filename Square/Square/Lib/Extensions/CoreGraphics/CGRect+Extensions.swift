@@ -15,6 +15,11 @@ extension CGRect {
         case topRight
         case bottomRight
         case bottomLeft
+        case leftCenter
+        case rightCenter
+        case center
+        case topCenter
+        case bottomCenter
     }
     
     var topLeft: CGPoint {
@@ -51,5 +56,19 @@ extension CGRect {
     
     var bottomCenter: CGPoint {
         return CGPoint(x: self.midX, y: self.maxY)
+    }
+    
+    func point(from position: Position) -> CGPoint {
+        switch position {
+        case .topLeft: return self.topLeft
+        case .topRight: return self.topRight
+        case .bottomRight: return self.bottomRight
+        case .bottomLeft: return self.bottomLeft
+        case .leftCenter: return self.leftCenter
+        case .rightCenter: return self.rightCenter
+        case .center: return self.center
+        case .topCenter: return self.topCenter
+        case .bottomCenter: return self.bottomCenter
+        }
     }
 }

@@ -10,78 +10,76 @@ import UIKit
 
 class SquareView: UIView {
     
-    @IBOutlet var lable: UILabel?
+    @IBOutlet var label: UILabel?
+    
+    struct Strings {
+        
+        static let start = "Start"
+        static let stop = "Stop"
+    }
+    
+    struct Durations {
+        
+        static let twoSecond = 2.0
+        static let zero = 0.0
+    }
     
     typealias Position = CGRect.Position
     
     private var isCancelled = false
     private var isMoving = false
-    private var isAnimated = true
+    private var isAnimating = true
 
     private var squarePosition = Position.topLeft
-    private let positions = PositionGenerator<Position>(objects: .topLeft, .topRight, .bottomRight, .bottomLeft)
+    private let positions = Generator<Position>(objects: .topLeft, .topRight, .bottomRight, .bottomLeft)
     
-    private let durationAnimate = 2.0
-    
-    public func onStart(_ sender: UIButton) {
+    public func start(_ sender: UIButton) {
         self.isCancelled.toggle()
         if self.isCancelled && !self.isMoving {
-            self.moveSquare(with: self.durationAnimate, animated: self.isAnimated)
+            self.moveSquare(animated: self.isAnimating)
             sender.setDesign(
                 sender: sender,
                 backgroundColor: .flatRed,
-                titleText: "STOP",
+                titleText: Strings.stop,
                 titleColor: .white
             )
         } else {
             sender.setDesign(
                 sender: sender,
                 backgroundColor: .flatGreen,
-                titleText: "START",
+                titleText: Strings.start,
                 titleColor: .white
             )
         }
     }
     
-    private func moveSquare(with durationAnimate: TimeInterval, animated: Bool) {
-        self.lable.do { lable in
+    private func moveSquare(animated: Bool) {
+        self.label.do { lable in
             var position = lable.frame.origin
-            let frame = self.frame.inset(
-                by: UIEdgeInsets(
-                    top: self.safeAreaInsets.top,
-                    left: 0,
-                    bottom: lable.frame.height,
-                    right: lable.frame.width
-                )
+            let inset = UIEdgeInsets(
+                top: self.safeAreaInsets.top,
+                left: 0,
+                bottom: lable.frame.height,
+                right: lable.frame.width
             )
-            
+            let frame = self.frame.inset(by: inset)
+        
             self.squarePosition = self.positions.next()
-            
-            switch self.squarePosition {
-            case .topLeft:
-                position = frame.topLeft
-            case .topRight:
-                position = frame.topRight
-            case .bottomRight:
-                position = frame.bottomRight
-            case .bottomLeft:
-                position = frame.bottomLeft
-            }
-            
-            self.animateMove(to: position, duration: durationAnimate, animated: animated)
+            position = frame.point(from: self.squarePosition)
+            self.animateMove(to: position, animated: animated)
         }
     }
     
-    private func animateMove(to position: CGPoint, duration: TimeInterval, animated: Bool) {
+    private func animateMove(to position: CGPoint, animated: Bool) {
         UIView.animate(
-            withDuration: animated ? duration : 0.0,
+            withDuration: animated ? Durations.twoSecond : Durations.zero,
             animations: {
-                self.lable?.frame.origin = position
+                self.label?.frame.origin = position
                 self.isMoving = true
             },
             completion: {_ in
                 if self.isCancelled {
-                    self.moveSquare(with: duration, animated: animated)
+                    self.moveSquare(animated: animated)
                 } else {
                     self.isMoving = false
                 }

@@ -13,7 +13,7 @@ class SquareViewController: UIViewController, RootViewRepresentable {
     typealias RootView = SquareView
     
     @IBAction func onStart(_ sender: UIButton) {
-        self.rootView?.onStart(sender)
+        self.rootView?.start(sender)
     }
     
     override func viewDidLoad() {

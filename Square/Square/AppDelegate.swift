@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = SquareViewController()
         window.makeKeyAndVisible()
+        
         self.window = window
         
         return true

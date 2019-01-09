@@ -44,7 +44,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
-                <outlet property="lable" destination="BFd-yK-eWs" id="KZC-Rx-un1"/>
+                <outlet property="label" destination="BFd-yK-eWs" id="KZC-Rx-un1"/>
             </connections>
             <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>
         </view>

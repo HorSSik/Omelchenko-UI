@@ -31,7 +31,7 @@
 		3F66281221E4937F00DC0E0C /* ObservableObject.Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66280F21E4937F00DC0E0C /* ObservableObject.Observers.swift */; };
 		3F66281521E495A600DC0E0C /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66281421E495A600DC0E0C /* UIButton+Extensions.swift */; };
 		3F7289C421DCB088007E5539 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7289C321DCB088007E5539 /* CGRect+Extensions.swift */; };
-		3F7289C721DCCF2A007E5539 /* PositionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7289C621DCCF2A007E5539 /* PositionGenerator.swift */; };
+		3F7289C721DCCF2A007E5539 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7289C621DCCF2A007E5539 /* Generator.swift */; };
 		3F7289CA21DCE302007E5539 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7289C921DCE302007E5539 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +83,7 @@
 		3F66280F21E4937F00DC0E0C /* ObservableObject.Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableObject.Observers.swift; sourceTree = "<group>"; };
 		3F66281421E495A600DC0E0C /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		3F7289C321DCB088007E5539 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
-		3F7289C621DCCF2A007E5539 /* PositionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionGenerator.swift; sourceTree = "<group>"; };
+		3F7289C621DCCF2A007E5539 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		3F7289C921DCE302007E5539 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +196,7 @@
 				3F440EC421D605A2006EA059 /* F.swift */,
 				3F440EC621D605A2006EA059 /* Atomic.swift */,
 				3F66280B21E4935B00DC0E0C /* AbstractCancellableProperty.swift */,
-				3F7289C621DCCF2A007E5539 /* PositionGenerator.swift */,
+				3F7289C621DCCF2A007E5539 /* Generator.swift */,
 				3F66280E21E4937F00DC0E0C /* ObservableObject.swift */,
 				3F66280D21E4937F00DC0E0C /* ObservableObject.Observer.swift */,
 				3F66280F21E4937F00DC0E0C /* ObservableObject.Observers.swift */,
@@ -416,7 +416,7 @@
 				3F7289C421DCB088007E5539 /* CGRect+Extensions.swift in Sources */,
 				3F440ED821D607C1006EA059 /* RangeReplacebleCollection+Extensions.swift in Sources */,
 				3F440ED421D60793006EA059 /* DispatchTime+Extensions.swift in Sources */,
-				3F7289C721DCCF2A007E5539 /* PositionGenerator.swift in Sources */,
+				3F7289C721DCCF2A007E5539 /* Generator.swift in Sources */,
 				3F66281121E4937F00DC0E0C /* ObservableObject.swift in Sources */,
 				3F66280C21E4935B00DC0E0C /* AbstractCancellableProperty.swift in Sources */,
 				3F3DCDF621D27717001836C5 /* Optional+Extensions.swift in Sources */,
