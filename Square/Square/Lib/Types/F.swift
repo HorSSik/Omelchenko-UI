@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum F {
+public enum F {
     
     typealias Completion = () -> ()
     typealias Execute = () -> ()

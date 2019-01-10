@@ -21,7 +21,7 @@ final class Generator<Value> {
         self.init(objects: objects)
     }
     
-    func next() -> Value {
+    public func next() -> Value {
         return self.index.modify { index in
             index = (index + 1) % self.objects.count
             

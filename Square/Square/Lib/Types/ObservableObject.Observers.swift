@@ -20,7 +20,7 @@ extension ObservableObject {
             }
         }
         
-        func notify(state: Value) {
+        public func notify(state: Value) {
             self.observers.modify {
                 $0 = $0.filter {
                     $0.isObserving

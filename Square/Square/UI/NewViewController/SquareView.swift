@@ -36,20 +36,21 @@ class SquareView: UIView {
     
     public func relocation(_ sender: UIButton) {
         self.isCancelled.toggle()
+        
+        var color = Color.flatGreen.opaque
+        var title = Strings.start
+        
         if self.isCancelled && !self.isMoving {
             self.setSquarePosition(animated: self.isAnimating)
-            sender.setDesign(
-                backgroundColor: Color.flatRed.opaque,
-                titleText: Strings.stop,
-                titleColor: .white
-            )
-        } else {
-            sender.setDesign(
-                backgroundColor: Color.flatGreen.opaque,
-                titleText: Strings.start,
-                titleColor: .white
-            )
+            color = Color.flatRed.opaque
+            title = Strings.stop
         }
+        
+        sender.setDesign(
+            backgroundColor: color,
+            titleText: title,
+            titleColor: .white
+        )
     }
     
     private func setSquarePosition(animated: Bool) {
